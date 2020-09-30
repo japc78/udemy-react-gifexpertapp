@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
 
 	// Uso del Hook useState para modificar dinamicamente la lista
-	const [categories, setCategories] = useState(['One Pusch', 'Samurai X', 'Dragon Ball']);
+	const [categories, setCategories] = useState(['Regular Show']);
 
 	/*
 	// Tarea. Agregar un elemento nuevo al arrary mediante esta funcion.
@@ -26,9 +27,11 @@ export const GifExpertApp = () => {
 
 			<ol>
 				{
-					categories.map(category => {
-						return <li key={category}>{category}</li>
-					})
+					categories.map(category => (
+						<GifGrid
+							key = {category}
+							category = {category}/>
+					))
 				}
 			</ol>
 		</>
