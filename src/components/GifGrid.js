@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ( {category }) => {
 
@@ -27,7 +28,7 @@ export const GifGrid = ( {category }) => {
 		})
 
 		// console.log(data);
-		console.log(gifs);
+		// console.log(gifs);
 		setImages( gifs );
 	}
 
@@ -36,17 +37,21 @@ export const GifGrid = ( {category }) => {
 	return (
 		<div>
 			<h3>{ category }</h3>
-			<ol>
 				{
 					// images.map(img => (
 					// 	<li key = {img.id}> {img.title} </li>
 					// ))
 
 					// Con destructuracion
-					images.map(({id, title}) => (
-						<li key = {id}> {title} </li>
+					images.map( img => (
+						<GifGridItem
+							key = {img.id}
+							// img = {img}
+
+							// Se envian las props diretamente con desestructuracion de manera independiente
+							{...img}
+						/>
 					))}
-			</ol>
 		</div>
 	)
 }
