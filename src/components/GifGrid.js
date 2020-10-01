@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { getGifs } from '../helpers/getGifs';
 import { GifGridItem } from './GifGridItem';
 
 export const GifGrid = ( {category }) => {
@@ -10,27 +11,14 @@ export const GifGrid = ( {category }) => {
 	// que hace la peticion y como segundo parametro un array de dependencias, en este caso vacio
 	// para que solo se dispare una sola vez.
 	useEffect(() => {
-		getGifs();
-	},[]);
+		getGifs(category)
 
-	const getGifs = async () => {
-		const url = 'https://api.giphy.com/v1/gifs/search?q=Regular show&limit=10&api_key=LtkGU0ZbRcWCOsCJNT1RceZ9iE6w2Pw6'
-		const respuesta = await fetch( url );
-		const { data } = await respuesta.json();
+			// .then(imgs => setImages(imgs));
+			// Lo mismo pero mas simplificado.
+			.then(setImages);
+	},[category]);
 
-		const gifs = data.map (img => {
-			return {
-				id: img.id,
-				title: img.title,
-				//la ? indica que si existe la url la traiga sino que no la pinte.
-				url: img.images?.downsized_medium.url
-			}
-		})
 
-		// console.log(data);
-		// console.log(gifs);
-		setImages( gifs );
-	}
 
 	// getGifs();
 
