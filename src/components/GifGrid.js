@@ -35,23 +35,25 @@ export const GifGrid = ( {category }) => {
 	// getGifs();
 
 	return (
-		<div>
+		<>
 			<h3>{ category }</h3>
-				{
-					// images.map(img => (
-					// 	<li key = {img.id}> {img.title} </li>
-					// ))
+			<div className="card-grid">
+					{
+						// images.map(img => (
+						// 	<li key = {img.id}> {img.title} </li>
+						// ))
 
-					// Con destructuracion
-					images.map( img => (
-						<GifGridItem
-							key = {img.id}
-							// img = {img}
+						// Con destructuracion
+						images.map( img => (
+							<GifGridItem
+								key = {img.id}
+								// img = {img}
 
-							// Se envian las props diretamente con desestructuracion de manera independiente
-							{...img}
-						/>
-					))}
-		</div>
+								// Se envian las props diretamente con desestructuracion de manera independiente
+								{...img}
+							/>
+						))}
+			</div>
+		</>
 	)
 }
