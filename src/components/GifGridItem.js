@@ -6,7 +6,7 @@ import React from 'react'
 
 // De una manera mas amigable para la lectura del codigo
 export const GifGridItem = ( {id, title, url} ) => {
-	console.log({id, title, url});
+	// console.log({id, title, url});
 
 	return (
 		<div className='card'>
