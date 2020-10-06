@@ -10,12 +10,12 @@ export const GifGrid = ( {category }) => {
 
 	return (
 		<>
-			<h3>{ category }</h3>
+			<h3 className="animate__animated animate__fadeIn">{ category }</h3>
 
 			{/* Operador ternario, si loading true se muestra cargando*/}
 			{/* { loading ? 'Cargando...' : 'Datos cargados'} */}
 
-			{ loading && <p>Cargando...</p>}
+			{ loading && <p className="animate__animated animate__flash">Cargando...</p>}
 
 
 			<div className="card-grid">
