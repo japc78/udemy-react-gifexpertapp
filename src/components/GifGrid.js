@@ -6,7 +6,7 @@ import { GifGridItem } from './GifGridItem';
 export const GifGrid = ( {category }) => {
 
 	// Con desestructuracion
-	const { data, loading} = useFetchGifs( category );
+	const { data:images, loading} = useFetchGifs( category );
 
 	return (
 		<>
@@ -14,6 +14,8 @@ export const GifGrid = ( {category }) => {
 
 			{/* Operador ternario, si loading true se muestra cargando*/}
 			{/* { loading ? 'Cargando...' : 'Datos cargados'} */}
+
+			{ loading && <p>Cargando...</p>}
 
 
 			<div className="card-grid">
@@ -23,7 +25,7 @@ export const GifGrid = ( {category }) => {
 					// ))
 
 					// Con destructuracion
-					data.map( img => (
+					images.map( img => (
 						<GifGridItem
 							key = {img.id}
 							// img = {img}
