@@ -1,11 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 
 // Con props ya pasadas de manera independiente.
 // export const GifGridItem = ( props ) => {
 // 	console.log(props);
 
 // De una manera mas amigable para la lectura del codigo
-export const GifGridItem = ( {id, title, url} ) => {
+export const GifGridItem = ( {title, url} ) => {
 	// console.log({id, title, url});
 
 	return (
@@ -14,4 +16,10 @@ export const GifGridItem = ( {id, title, url} ) => {
 			<p>{title}</p>
 		</div>
 	);
+}
+
+
+GifGridItem.propTypes = {
+	title : PropTypes.string.isRequired,
+	url : PropTypes.string.isRequired
 }
