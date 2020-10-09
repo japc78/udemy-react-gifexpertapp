@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Purebas en componente <GifGrid /> Debe de mostrar items cuando se cargan imagenes useFechGifs 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__fadeIn"
+  >
+    Rick and Morty
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="ABC"
+      key="ABC"
+      title="Elemento de prueba"
+      url="https://localhost/testing/url.jpg"
+    />
+    <GifGridItem
+      id="DEF"
+      key="DEF"
+      title="Elemento de prueba 2"
+      url="https://localhost/testing/url2.jpg"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Purebas en componente <GifGrid /> Debe de mostrarse correctamente 1`] = `
+<Fragment>
+  <h3
+    className="animate__animated animate__fadeIn"
+  >
+    Rick and Morty
+  </h3>
+  <p
+    className="animate__animated animate__flash"
+  >
+    Cargando...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;
