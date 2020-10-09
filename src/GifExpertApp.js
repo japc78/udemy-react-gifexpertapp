@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-export const GifExpertApp = () => {
+export const GifExpertApp = ({ defaultCategories = [] }) => {
 
 	// Uso del Hook useState para modificar dinamicamente la lista
-	const [categories, setCategories] = useState(['Regular Show']);
+	// const [categories, setCategories] = useState(['Regular Show']);
+	const [categories, setCategories] = useState( defaultCategories );
 
 	return (
 		<>
